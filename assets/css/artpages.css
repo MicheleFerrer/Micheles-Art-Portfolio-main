@@ -1,28 +1,21 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&display=swap");
 
-
 :root {
   --header-height: 3.5rem;
-  
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
-
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat Alternates", sans-serif;
   --biggest-font-size: 2rem;
   --big-font-size: 1.5rem;
   --h3-font-size: 1rem;
   --normal-font-size: .938rem;
-
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
-
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -37,18 +30,20 @@
     --normal-font-size: 1rem;
   }
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  
 }
 
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--black-color);
-  color: var(--black-color);
+  background-color: #eee;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -58,19 +53,20 @@ ul {
 a {
   text-decoration: none;
 }
- 
-   /*=============== REUSABLE CSS CLASSES ===============*/
-   .container {
-    max-width: 1100px;
-    margin-inline: 1.5rem;
-  }
-  
-  .main {
-    overflow: hidden;
-    top: 100%;
-  }
- /*=============== HEADER & NAV ===============*/
- .header{
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1100px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+  top: 100%;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
   position: fixed;
   width: 90%;
   top: 0;
@@ -78,141 +74,151 @@ a {
   z-index: var(--z-fixed);
 }
 
-
-
-.nav{
+.nav {
   position: relative;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   margin-inline-end: 0;
   align-items: center;
-  
-  
 }
 
-.nav__logo{
-color: var(--black-color);
-font-family: var(--body-font);
-font-weight: var(--font-bold);
+.nav__logo {
+  color: var(--black-color);
+  font-family: var(--body-font);
+  font-weight: var(--font-bold);
 }
 
 .nav__toggle,
-.nav__close{
+.nav__close {
   font-size: 2rem;
   cursor: pointer;
 }
 
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+}
+
+.nav__link {
+  color: var(--black-color);
+  opacity: 0.8;
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__link:hover {
+  opacity: 1;
+  transition: transform .3s ease-in-out;
+}
+
+.nav__close {
+  position: fixed;
+  top: 1rem;
+  right: 5rem;
+}
+
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px) {
-  .nav__menu{
-      position: fixed;
-      top: 0;
-      right: -100%;
-      background-color: hsla(0, 0%, 100%, .1);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      width: 70%;
-      height: 100%;
-      padding: 6rem 2.5rem 0;
-      transition: right .4s;
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 70%;
+    height: 100%;
+    padding: 6rem 2.5rem 0;
+    transition: right .4s;
   }
- 
-  
-  .nav__close i{
+
+  .nav__close i {
     color: var(--black-color);
     font-size: 1.5rem;
     cursor: pointer;
     top: 1rem;
+  }
 
+  .swiper {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
   }
-  
-  .swiper{
-    width: 20%;
-    height: 20%;
-    max-width: 200px;
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    max-width: max-content;
+    margin: auto;
+    border-radius: 10px;
   }
-  .black-work{
+
+  .swiper-slide {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    image-rendering: optimizeQuality;
+    image-resolution: high;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    image-rendering: optimizeQuality;
+    padding: 0;
+    image-resolution: high;
+    transition: transform 0.3s ease-in-out;
+    align-items: baseline;
+  }
+
+  .swiper-slide img:hover {
+    transform: scale(1.5);
+    border-radius: 10px;
+    align-self: center;
+  }
+
+
+  .black-work {
     width: 110%;
     height: 100%;
     max-width: max-content;
-    
   }
 
-
+  .swiper-pagination-bullet {
+    background-color: var(--black-color) !important;
+  }
 }
-.nav__list{
-display: flex;
-flex-direction: column;
-row-gap: 3.5rem;
-}
-
-.nav__link{
-color: var(--black-color);
-opacity: 0.8;
-font-weight: var(--font-semi-bold);
-}
-
-.nav__link:hover{
-opacity: 1;
-transition: transform .3s ease-in-out;
-}
-
-
-.nav__close{
-position: fixed;
-top: 1rem;
-right: 5rem;
-}
-
 
 /*=============== MENU SHOW Y HIDDEN ===============*/
-/* Show menu when clicking the hamburger icon */
-.show-menu{
+.show-menu {
   right: 0;
 }
-/* Hide menu when clicking the close icon */
-.hide-menu{
+.hide-menu {
   right: -100%;
 }
 
 /*=============== HOME ===============*/
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper {
-  width: 100%;
- height: 100%;
-  min-width: 300px;
-  margin: 1rem;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-
-.home-title{
+.home-title {
   margin-top: 100px;
   margin-bottom: 2rem;
- justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
-
 
 .home {
   display: flex;
@@ -223,38 +229,37 @@ body {
   text-align: center;
 }
 
-.home-space{
+.home-space {
   margin-top: 2rem;
   padding: 0;
 }
 
-.home__subtitle{
+.home__subtitle {
   font-size: var(--h3-font-size);
   font-style: italic;
 }
 
-.home__title{
+.home__title {
   font-size: var(--biggest-font-size);
   align-items: center;
   margin-bottom: 2rem;
   font-weight: var(--font-bold);
   max-width: 500px;
-  
 }
-.home__social{
+
+.home__social {
   position: fixed;
   z-index: var(--z-tooltip);
   left: 1rem;
-  bottom:2rem;
+  bottom: 2rem;
   display: grid;
   row-gap: 1.5rem;
   margin-top: 2rem;
   justify-content: center;
   align-items: center;
-  
 }
 
-.home__social-link{
+.home__social-link {
   color: var(--black-color);
   font-size: 1.5rem;
 }
@@ -264,120 +269,74 @@ body {
   transition: transform .4s ease-in-out;
 }
 
-
-
-
-
-
 /*=============== SWIPER ===============*/
-
-.swiper-pagination {
-  background-color: #000;
-  opacity: 1;
-  
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: var(--black-color);
-  transition: all .4s ease-in-out;
-}
-
-.swiper-wrapper {
+.swiper {
+  width: 60%;
+  height: auto;
+  max-width: 600px;
+  margin: auto;
   display: flex;
   align-items: center;
-  align-content: center;
-    
-
-    
+  justify-content: center;
+  text-align: center;
 }
 
 .swiper-slide {
+  width: 100%;
   text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .4s ease-in-out;
   border-radius: 10px;
   margin: 10px;
- box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
- image-rendering: optimizeQuality;
-  image-resolution: high;
-  
-}
-
-.swiper-slide:hover img {
-  transform: scale(1.1);
-  filter: contrast(1.2);
-  filter: brightness(1.05);
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  
-  
-}
-
-.swiper-slide img:hover{
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
   image-rendering: optimizeQuality;
   image-resolution: high;
-  border-radius: 10px;
-  
 }
 
 .swiper-slide img {
   display: block;
+  align-self: center;
   width: 100%;
   border-radius: 10px;
   image-rendering: optimizeQuality;
   padding: 0;
   image-resolution: high;
-
+  transition: transform 0.3s ease-in-out;
 }
 
-.swiper-slide {
-width: 100%;
-}
-
-.swiper-slide:nth-child(2n) {
-width: 80%;
-margin-inline-end: 50px;
-align-self: center;
-align-content: center;}
-
-.swiper-slide:nth-child(3n) {
-width: 60%;
-margin-inline-end: 60px;
-align-self: center;
-align-content: center;
-
+.swiper-slide:hover img {
+  transform: scale(1.05);
+  filter: contrast(1.2) brightness(1.05);
+  border-radius: 10px;
 }
 
 /*=============== BREAKPOINTS ===============*/
-  /* For medium devices */
-  
-  @media screen and (min-width: 768px) {
-    .nav__menu{
-      width: 50%;
-    }
-    .swiper {
-      width:50%;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #000;
-      cursor: pointer;
-      width: 40%;
-      font-size: 10px;
-    }
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .nav__menu {
+    width: 50%;
   }
-  /* For large devices */
-  @media screen and (min-width: 1150px){
-    .container {
-      margin-inline: auto;
-    }
-  
-  .nav{
+  .swiper {
+    width: 70%;
+    height: 70%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000;
+    cursor: pointer;
+    width: 40%;
+    font-size: 10px;
+  }
+}
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav {
     height: calc(var(--header-height) + 2rem);
   }
   .home {
@@ -387,11 +346,9 @@ align-content: center;
     justify-content: center;
     text-align: center;
   }
-  
   .swiper {
-    width: 50%;
-    height: 50%;
-    max-width: 600px;
+    width: 80%;
+    height: 80%;
     align-self: center;
   }
   .swiper-button-next,
@@ -400,16 +357,14 @@ align-content: center;
     cursor: pointer;
     width: 45%;
     font-size: 10px;
-  } 
+  }
   .nav__toggle,
   .nav__close {
     display: none;
   }
-  
-  .nav__menu{
+  .nav__menu {
     width: initial;
   }
-  
   .nav__list {
     flex-direction: row;
     column-gap: 4rem;

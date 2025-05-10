@@ -34,14 +34,22 @@ document.addEventListener('DOMContentLoaded', function () {
  
 });
 
+
 // Swiper initialization with pagination
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.mySwiper', {
+
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       bulletClass: 'swiper-pagination-bullet',
       bulletActiveClass: 'swiper-pagination-bullet-active',
     },
+    
+    
     // Other configurations
   });
 
