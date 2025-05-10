@@ -68,10 +68,15 @@ a {
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
-  width: 90%;
+  width: 100%;
   top: 0;
   background-color: transparent;
   z-index: var(--z-fixed);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  transition: background-color .4s;
+  padding: 0 1.5rem;
+  margin-inline: auto;
 }
 
 .nav {
