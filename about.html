@@ -5,10 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/art.css">
+    <link rel="stylesheet" href="assets/css/aboutme.css">
 
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 </head>
+
 <body>
-    
-</body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__header">
+                <a href="index.html" class="nav__logo" style="color: black;">Michele Elizabeth Ferrer's Art Portfolio</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li>
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link">Art Pieces</a>
+                    </li>
+                    <li>
+                        <a href="flash.html" class="nav__link">Flash</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="nav__link">About me</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="https://venue.ink/@oloruntattoos" target="_blank" class="nav__link">Book now! </a>
+                    </li>
+                </ul>
+
+                <!--Close Button-->
+                <div class="nav__close nav__button" id="nav-close">
+                    <i class="ri-close-large-line" style="color: black;"></i>
+                </div>
+            </div>
+            <!--Toggle Button-->
+            <div class="nav__toggle nav__button" id="nav-toggle">
+                <i class="ri-menu-line" style="color: black;"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== ABOUT ====================-->
+    <section class="about section container" id="about">
+        <h2 class="home-title">About Me</h2>
+
+        <!--==================== ABOUT CONTENT ====================-->
+        <div class="about__container grid home__data home">
+            <!--==================== ABOUT IMG ====================-->
+
+            <!--==================== ABOUT DATA ====================-->
+            <div class="about__data">
+                <!--==================== ABOUT INFO ====================-->
+                <p>Hi! I'm Michele, a tattoo artist based in Orlando. I specialize in creating unique and personalized tattoos
+                </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse accusamus distinctio labore perferendis rem! Aliquid sequi praesentium dolorem sapiente sit, commodi ipsum velit necessitatibus aspernatur repellat recusandae neque ratione porro!</p>
+                <div class="about__links">  
+                <a href="mailto:oloruntattoos@gmail.com">Contact Me
+                    <i class="ri-mail-send-line"></i>
+                    </a>
+                    <a href="https://venue.ink/@oloruntattoos" target="_blank">Book Now!
+                    <i class="ri-calendar-check-line"></i>
+                    </a>
+                    <a href="projects.html">View My Work
+                    <i class="ri-artboard-line"></i>
+                    </a>
+                    </div>  
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/artpages.js"></script>
+
+
 </html>
